@@ -6,7 +6,7 @@ var chatlog = {
 function setup() {
   createCanvas(400, 400);
   select("#send").mouseClicked(sendMessage);
-  socket = io.connect('https://simplechat-3238.herokuapp.com/');
+  socket = io.connect('https://facialexpressionchat-3238.herokuapp.com/');
   socket.on('chatdata', gotMessage);
 }
 
