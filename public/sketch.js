@@ -45,13 +45,11 @@ function draw() {
 function sendMessage() {
   var text_name = document.getElementById("name").value;
   var text_message = document.getElementById("message").value;
-  var chatdata = {
-    name: text_name,
-    message: text_message
-  }
-  socket.emit('chatdata', chatdata);
-  console.log(chatdata);
-  chatlog.name = chatdata.name;
-  chatlog.message = chatdata.message;
+  log(text_message);
+}
 
+
+const log = (message, options) => {
+  var $el = $('<li>').addClass('log').text(message);
+  addMessageElement($el, options);
 }
