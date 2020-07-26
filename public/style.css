@@ -22,6 +22,11 @@ html, body {
   top: 20%;
   left : 70%;
 }
+#message
+{
+  width: 20em;
+  height:  1.5em;
+}
 
 
 
@@ -47,7 +52,7 @@ li {
     }
 
 .chat{
-  margin-top: 1.5em;
+  margin-top: 0.5em;
   height : 2em;
 }
 
@@ -60,11 +65,19 @@ li {
   position: relative;
   border-radius: 0.3em;
   padding: 0.6em;
+  height: 2em;
   text-align: right;
-  box-shadow: 0px;
+  border: none;  /* 枠線を消す */
+  outline: none; 
 }
-#message
-{
-  width: 20em;
-  height: 1.5em;
+
+.reaction{
+  position: relative;
+  margin-top: 1em;
+  height: 1em;
+  width: 1em;
+  display: inline;
+  border-radius: 50%;
+
+
 }

@@ -74,6 +74,7 @@ function draw() {
   }
 }
 
+//表情用
 function distance(emotion, face) {
   var result = 0;
   for (var i = 0; i < emotion.length; i++)
@@ -99,22 +100,53 @@ function emotionCulc(positions) {
   }
 }
 
+//チャット
 function sendMessage() {
   var text_message = document.getElementById("message").value;
   log(text_message);
+  setLogColor();
+}
+
+/*
+<li class chat id=logNo(count)>
+    <div class my>
+        <button class=coment id=chatNo(count) onclick=reaction(count)></button>
+    </div>
+</li>
+*/
+const log = (message, options) => {
+  $('ul').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + message + '</button></div></li > ');
+}
+
+function setLogColor() {
   let id = "#chatNo" + chatcount;
   let c = rgb2css(ang, neu, smi, 90);
   $(id).css("background-color", c);
   chatcount++;
 }
 
-const log = (message, options) => {
-  $('ul').append('<li class="chat"><div class="my"><button class="coment" id = "chatNo' + chatcount + '" > ' + message + '</button></div></li > ');
+
+/*
+<li class chat id=logNo(count)>
+    <div class my>
+        <button class=coment id=chatNo(count) onclick=reaction(count)></button>
+    </div>
+    <div class=reaction id=reaction(num)></div>
+</li>
+*/
+
+function reaction(num) {
+  console.log(num);
+  let id = '#logNo' + num;
+  $(id).append('<div class="reactoion" id="reaction' + num + '"></div>')
+  id = "#reaction" + num;
+  let c = rgb2css(ang, neu, smi, 90);
+  $(id).css("background-color", c);
 }
+
 
 function changeBoxColor(r, g, b) {
   let c = rgb2css(r, g, b, 80);
-  console.log(c);
   $(".st0").css("fill", c);
 }
 

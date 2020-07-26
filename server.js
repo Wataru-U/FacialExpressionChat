@@ -1,3 +1,7 @@
+let chatcount = 0;
+let userNum;
+let nameList;
+
 var PORT = process.env.PORT || 3000;
 let express = require('express');
 let app = express();
