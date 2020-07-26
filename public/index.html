@@ -5,6 +5,7 @@
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="p5.js"></script>
+  <script src="https://www.auduno.com/clmtrackr/build/clmtrackr.min.js"></script>
   <script src="p5.sound.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8">
@@ -12,14 +13,39 @@
 </head>
 
 <body>
-  <input type="text" id="name" placeholder="Your Name">
-  <input type="text" id="message" placeholder="type your message">
-  <button id="send">send</button>
+  <script src="snap.svg-min.js"></script>
   <script src="sketch.js"></script>
-  <li class="chatArea">
-    <ul class="messages"></ul>
+  <div class="fixed">
+    <div class="butoons">
+      <input type="text" id="message" placeholder="type your message">
+      <button id="send">send</button>
     </div>
-  </li>
+    <div class="unyounyo"">
+      <svg id=" svg" xmlns=" http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 1376.23 404.66">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: none;
+          }
+        </style>
+        <clipPath id="clip-path" transform="translate(0.42 -22)">
+          <rect class="cls-1" width="1374" height="423" />
+        </clipPath>
+      </defs>
+      </svg>
+    </div>
+
+  </div>
+
+  <div class="main">
+    <li class="chatArea">
+      <ul class="messages"></ul>
+    </li>
+    <div id="myfe"></div>
+  </div>
+
+
 
 
 </body>
