@@ -109,7 +109,7 @@ function sendMessage() {
 }
 
 const log = (message, options) => {
-  $('ul').append('<li class="chat"><div class="my" id = "chatNo' + chatcount + '" > ' + message + '</div></li > ');
+  $('ul').append('<li class="chat"><div class="my"><button class="coment" id = "chatNo' + chatcount + '" > ' + message + '</button></div></li > ');
 }
 
 function changeBoxColor(r, g, b) {
