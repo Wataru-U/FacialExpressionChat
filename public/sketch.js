@@ -106,7 +106,7 @@ function sendMessage() {
 const log = (message, options) => {
   $('ul').append('<li id=chatNo"' + chatcount + '">' + message + '</li>');
   let id = "#chatNo" + chatcount;
-  $(id).css("fill", c);
+  $(id).css("background-color", c);
   chatcount++;
 }
 
