@@ -1,4 +1,3 @@
-import snapsvg from 'snapsvg'
 
 var capture;
 var tracker;
