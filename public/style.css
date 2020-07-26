@@ -40,8 +40,24 @@ html, body {
   padding: 10px 20px 10px 20px;
 }
 
-
-.main{ 
+.chat{
+  margin-top: 1.5em;
+  height : 2em;
 }
 
-
+.main{ 
+  margin-left: 20%;
+  
+  margin-right: 30%;
+}
+.my{
+  border-radius: 0.2em;
+  display: inline;
+    padding: 0.6em;
+}
+li {
+  border-radius: 0.2em;
+    list-style-type: none; /*点を非表示*/
+    position: relative; /*基準位置*/
+    padding-left: 0.6em;
+    }

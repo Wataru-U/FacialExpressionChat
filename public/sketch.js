@@ -1,5 +1,8 @@
 var chatcount = 0;
 
+var ang;
+var smi;
+var neu;
 
 var capture;
 var tracker;
@@ -56,16 +59,16 @@ function draw() {
     myFaceValue = emotionCulc(positions);
 
     //表情の距離を取得
-    var smi = 1 / distance(smileValue, myFaceValue);
-    var ang = 1 / distance(angryValue, myFaceValue);
-    var neu = 1 / distance(neutralValue, myFaceValue);
+    smi = 1 / distance(smileValue, myFaceValue);
+    ang = 1 / distance(angryValue, myFaceValue);
+    neu = 1 / distance(neutralValue, myFaceValue);
     // sumで割って百分率
-    var sum = (smi + ang + neu) / 155;
+    var sum = (smi + ang + neu);
     smi /= sum;
     ang /= sum;
     neu /= sum;
     myFacialEmotion = [smi, ang, neu];
-    changeBoxColor(ang + 100, neu + 100, smi + 100);
+    changeBoxColor(ang, neu, smi);
     // 戻す
     myFacialEmotion = [smi, ang, neu];
   }
@@ -99,23 +102,24 @@ function emotionCulc(positions) {
 function sendMessage() {
   var text_message = document.getElementById("message").value;
   log(text_message);
-  $
-}
-
-
-const log = (message, options) => {
-  $('ul').append('<li id=chatNo"' + chatcount + '">' + message + '</li>');
   let id = "#chatNo" + chatcount;
-  $(id).css("fill", c);
+  let c = rgb2css(ang, neu, smi, 90);
+  $(id).css("background-color", c);
   chatcount++;
 }
 
+const log = (message, options) => {
+  $('ul').append('<li class="chat"><div class="my" id = "chatNo' + chatcount + '" > ' + message + '</div></li > ');
+}
+
 function changeBoxColor(r, g, b) {
-  let c = rgb2css(r, g, b);
+  let c = rgb2css(r, g, b, 80);
+  console.log(c);
   $(".st0").css("fill", c);
 }
 
-function rgb2css(r, g, b) {
-  return "rgb(" + r + ',' + g + ',' + b + ')';
+function rgb2css(r, g, b, l) {
+  var col = r * 600 + g * 0 + b * 200;
+  return "hsl(" + col + ", 70%," + l + "%)";
 }
 
