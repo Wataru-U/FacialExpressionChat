@@ -108,7 +108,7 @@ const log = (message, options) => {
 
 function changeBoxColor(r, g, b) {
   let c = rgb2css(r, g, b);
-  $("#svg").css("fill", c);
+  $(".st0").css("fill", c);
 }
 
 function rgb2css(r, g, b) {
@@ -126,7 +126,7 @@ var $svg = Snap('#svg'),
 function AnimationSvg() {
 
   //パスを定義して１秒間動かした後にアニメーションが繰り返される
-  $svg.animate({ d: path[i] }, SPEED, EASING, AnimationSvg);
+  //$svgBody.animate({ d: path[i] }, SPEED, EASING, AnimationSvg);
 
   //pathの順番をつけかえ
   i++;
