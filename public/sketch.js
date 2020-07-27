@@ -23,11 +23,11 @@ var smileValue = [0.10154191491665203, 1.2921248228803919, 0.6262147018565902, 0
 
 var angryValue = [0.01803983204873657, 1.349418335193352, 0.6715891954170593, 0.18543454351091018];
 
-const socketforId = io();
-socketforId.on("token", (data) => {
+const socket = io();
+socket.on("token", (data) => {
   myId = data.token;
 });
-socketforId.on('massage', gotMessage);//ここ帰る
+socket.on('massage', gotMessage);//ここ帰る
 /*
 <li class chat id=logNo(count)>
     <div class anoter>
