@@ -24,4 +24,5 @@ function newConnection(socket) {
         socket.broadcast.emit('message', data)
         console.log(data)
     }
+
 }
