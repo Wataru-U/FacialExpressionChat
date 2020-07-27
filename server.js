@@ -21,7 +21,7 @@ function newConnection(socket) {
     socket.on('chatdata', mouseMsg);
 
     function mouseMsg(data) {
-        socket.broadcast.emit('chatdata', data)
+        socket.broadcast.emit('message', data)
         console.log(data)
     }
 }

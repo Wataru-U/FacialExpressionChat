@@ -1,3 +1,6 @@
+var myId;
+var myname;
+
 var chatcount = 0;
 
 var ang;
@@ -20,7 +23,27 @@ var smileValue = [0.10154191491665203, 1.2921248228803919, 0.6262147018565902, 0
 
 var angryValue = [0.01803983204873657, 1.349418335193352, 0.6715891954170593, 0.18543454351091018];
 
+const socketforId = io();
+socketforId.on("token", (data) => {
+  myId = data.token;
+});
+socketforId.on('massage', gotMessage);//ここ帰る
+/*
+<li class chat id=logNo(count)>
+    <div class anoter>
+        <button class=coment id=chatNo(count) onclick=reaction(count)></button>
+    </div>
+</li>
+*/
+function GotMessage(message) {
+  const comment = message.text;
+  $('ul').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
 
+  let id = "#chatNo" + chatcount;
+  let c = rgb2css(massage.angry, message.neutral, message.smile, 90);
+  $(id).css("background-color", c);
+  chatcount++;
+}
 
 function setup() {
   createCanvas(w, h);
@@ -103,6 +126,15 @@ function emotionCulc(positions) {
 //チャット
 function sendMessage() {
   var text_message = document.getElementById("message").value;
+  var message = {
+    id: myId,
+    text: text_message,
+    smile: smi,
+    angry: ang,
+    neutral: neu
+  }
+  socket.emit('messsage', message);
+  console.log(emoemo);
   log(text_message);
   setLogColor();
 }
@@ -114,8 +146,8 @@ function sendMessage() {
     </div>
 </li>
 */
-const log = (message, options) => {
-  $('ul').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + message + '</button></div></li > ');
+const log = (comment, options) => {
+  $('ul').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
 }
 
 function setLogColor() {
