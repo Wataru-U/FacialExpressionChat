@@ -132,7 +132,7 @@ function sendMessage() {
     angry: ang,
     neutral: neu
   }
-  socket.emit('messsage', message);
+  socket.emit('message', message);
   log(text_message);
   setLogColor();
 }
