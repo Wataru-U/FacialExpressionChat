@@ -38,7 +38,7 @@ socket.on('message', gotMessage);//ここ帰る
 function gotMessage(message) {
   console.log(message);
   const comment = message.text;
-  $('ul').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
+  $('.massages').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
   let id = "#chatNo" + chatcount;
   let c = rgb2css(message.angry, message.neutral, message.smile, 90);
   $(id).css("background-color", c);
@@ -146,7 +146,7 @@ function sendMessage() {
 </li>
 */
 const log = (comment, options) => {
-  $('ul').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
+  $('massages').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
 }
 
 function setLogColor() {

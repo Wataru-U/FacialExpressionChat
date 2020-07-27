@@ -14,32 +14,36 @@
 
 <body>
   <script src="sketch.js"></script>
+
+  <!-- --------ハンバーガーメニュー-------- -->
+  <header calss="header">
+    <div class="naviBtn">
+      <p class="menuBtn">
+        <span class="menuBtn1"></span>
+        <span class="menuBtn2"></span>
+        <span class="menuBtn3"></span>
+      </p>
+    </div>
+    <ul class="menuButtons">
+      <li id="username">username</li>
+      <li id="facialEmotionSetting">facialEmotionSetting</li>
+      <li id="colorSetting">colorSetting</li>
+    </ul>
+  </header>
+
   <div class="fixed">
     <div class="buttons">
       <input type="text" id="message" placeholder="type your message">
       <button id="send">send</button>
     </div>
+
+    <!-- --------パス-------- -->
     <div class="unyounyo"">
       <svg id=" svg" xmlns=" http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 1376.23 404.66">
-      <defs>
-        <style>
-          .cls-1 {
-            fill: none;
-          }
-
-          #st0 {
-            fill: #a8dbff;
-          }
-
-          #st1 {
-            display: none;
-          }
-        </style>
-        <clipPath id="clip-path" transform="translate(0.42 -22)">
-          <rect class="cls-1" width="1374" height="423" />
-        </clipPath>
-      </defs>
+      <clipPath id="clip-path" transform="translate(0.42 -22)">
+        <rect class="cls-1" width="1374" height="423" />
+      </clipPath>
       <path class="st0"
         d="M-.42,426.66c77-6,146.91-25.47,219.42-54.5,42.07-16.84,137.6-26.34,182-27.24,46.8-.95,92.59,21.95,139,28.25,49.29,6.69,80.44-14.27,130-19.17,1.49,1.54-2.23,1.15,0,0,106.64-55.24,196.6-94.57,312.51-90.82,28.38.91,56.47,4.49,84.7,7.77,26.19,3,53.61,4.74,79-5.18,50-19.51,69.07-80.49,98.17-127.34,33-53.17,79.25-94,130.9-116.43q-1.4,170,.48,339.93c.35,30.82-2.28,30.25-1.78,61.07"
         transform="translate(0.42 -22)" />
@@ -48,15 +52,13 @@
 
   </div>
 
+  <!-- --------チャット-------- -->
   <div class="main">
     <li class="chatArea">
-      <div class="bc">
-        <ul class="messages"></ul>
-      </div>
+      <ul class="messages"></ul>
     </li>
     <div id="myfe"></div>
   </div>
-
 
 
 

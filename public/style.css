@@ -1,7 +1,66 @@
+/* -=-=-=-=-=- body -=-=-=-=-=- */
 html, body {
   margin: 0;
   padding: 0;
 }
+
+li {
+    list-style-type: none;
+    }
+/* -=-=-=-=-=-=-=-=-=-=-=-= MENU -=-=-=-=-=-=-=-=-=-=-=-= */
+.naviBtn{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 4em;
+    height: 4em;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+.menuBtn{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc
+}
+
+.menuBtn:after{
+    position: absolute;
+    top: 3em;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.menuBtn span{
+  position: absolute;
+	width: 50%;
+	height: 2px;
+	left: 0;
+	right: 0;
+	top: 0em;
+	bottom: 0;
+	margin: auto;
+	background: rgb(255, 255, 255);
+	-webkit-transition: .3s ease-out; transition: .3s ease-out;
+    /* トップ-1.5に中心基準に横50％たて1.3px背景白の四角　*/
+}
+
+
+.menuBtn span.menuBtn1 {
+	top: -1.5em;
+/* 下　*/
+}
+
+
+.menuBtn span.menuBtn3 {
+	top: 1.5em;
+/*  上　*/
+}
+
+/* -=-=-=-=-=-  background -=-=-=-=-=- */
 .fixed{
   position: fixed;
   width: 100vw;
@@ -16,7 +75,7 @@ html, body {
   right: 0;
 }
   
-
+/* -=-=-=-=-=- text -=-=-=-=-=- */
 .buttons{
   position: relative;
   top: 20%;
@@ -33,19 +92,6 @@ html, body {
 
 
 /*チャットの中身*/
-.bc{
-  z-index: -1;
-  height: 100%;
-  padding: 10px 20px 10px 20px;
-  background-color: #dddddd;
-
-}
-.messages {
-  z-index: 3;
-  margin: 0;
-  overflow-y: scroll;
-}
-
 .chatArea
 {
   position: relative;
@@ -53,9 +99,12 @@ html, body {
   margin-right: 40%;
 }
 
-li {
-    list-style-type: none; /*点を非表示*/
-    }
+.messages {
+  margin: 0;
+  overflow-y: scroll;
+  height: 100%;
+  padding: 10px 20px 10px 20px;
+}
 
 .chat{
   margin-top: 0.5em;
@@ -84,6 +133,4 @@ li {
   width: 1em;
   display: inline;
   border-radius: 50%;
-
-
 }
