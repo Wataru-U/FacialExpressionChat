@@ -35,10 +35,9 @@ socketforId.on('massage', gotMessage);//ここ帰る
     </div>
 </li>
 */
-function GotMessage(message) {
+function gotMessage(message) {
   const comment = message.text;
   $('ul').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
-
   let id = "#chatNo" + chatcount;
   let c = rgb2css(massage.angry, message.neutral, message.smile, 90);
   $(id).css("background-color", c);
@@ -134,7 +133,6 @@ function sendMessage() {
     neutral: neu
   }
   socket.emit('messsage', message);
-  console.log(emoemo);
   log(text_message);
   setLogColor();
 }
