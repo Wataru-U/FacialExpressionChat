@@ -18,7 +18,7 @@ io.sockets.on('connection', newConnection)
 
 function newConnection(socket) {
     console.log('connection:', socket.id);
-    socket.on('chatdata', mouseMsg);
+    socket.on('massage', mouseMsg);
 
     function mouseMsg(data) {
         socket.broadcast.emit('message', data)
