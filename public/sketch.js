@@ -36,6 +36,7 @@ socket.on('message', gotMessage);//ここ帰る
 </li>
 */
 function gotMessage(message) {
+  console.log(message);
   const comment = message.text;
   $('ul').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
   let id = "#chatNo" + chatcount;
