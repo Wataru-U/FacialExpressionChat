@@ -146,7 +146,7 @@ function sendMessage() {
 </li>
 */
 const log = (comment, options) => {
-  $('massages').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
+  $('.massages').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
 }
 
 function setLogColor() {
