@@ -27,7 +27,7 @@ const socket = io();
 socket.on("token", (data) => {
   myId = data.token;
 });
-socket.on('massage', gotMessage);//ここ帰る
+socket.on('message', gotMessage);//ここ帰る
 /*
 <li class chat id=logNo(count)>
     <div class anoter>
