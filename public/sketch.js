@@ -40,7 +40,7 @@ function gotMessage(message) {
   const comment = message.text;
   $('ul').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
   let id = "#chatNo" + chatcount;
-  let c = rgb2css(massage.angry, message.neutral, message.smile, 90);
+  let c = rgb2css(message.angry, message.neutral, message.smile, 90);
   $(id).css("background-color", c);
   chatcount++;
 }
