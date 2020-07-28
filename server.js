@@ -19,9 +19,14 @@ io.sockets.on('connection', newConnection)
 function newConnection(socket) {
     console.log('connection:', socket.id);
     socket.on('message', mouseMsg);
+    socket.on('reaction', mouseReaction);
 
     function mouseMsg(data) {
         socket.broadcast.emit('message', data)
+        console.log(data)
+    }
+    function mouseReaction(data) {
+        socket.broadcast.emit('reaction', data)
         console.log(data)
     }
 

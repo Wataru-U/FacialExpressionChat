@@ -38,6 +38,7 @@ socket.on("token", (data) => {
   myId = data.token;
 });
 socket.on('message', gotMessage);//ここ帰る
+socket.on('reaction', gotReaction);
 /*
 <li class chat id=logNo(count)>
     <div class anoter>
@@ -48,6 +49,22 @@ socket.on('message', gotMessage);//ここ帰る
 function gotMessage(message) {
   const comment = message.text;
   $('.messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" ><span class="name">' + message.name + '</span>' + comment + '</button></div></li > ');
+  let id = "#chatNo" + chatcount;
+  let c = rgb2css(message.angry, message.neutral, message.smile);
+  $(id).css("background-color", c);
+  chatcount++;
+}
+
+/*
+<li class chat id=logNo(count)>
+    <div class another>
+        <div class=coment reaction id=chatNo(count) onclick=reaction(count)><span class=re>Re:</span>text</div>
+    </div>
+</li>
+*/
+function gotReaction(rection) {
+  const comment = reaction.text;
+  $('.messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><div class="coment reaction" id="chatNo' + chatcount + '"><span class=re>Re:' + reaction.name + '</span>' + comment + '</div></div></li>');
   let id = "#chatNo" + chatcount;
   let c = rgb2css(message.angry, message.neutral, message.smile);
   $(id).css("background-color", c);
@@ -192,8 +209,19 @@ function setLogColor() {
 
 function reaction(num) {
   let id = 'chatNo' + num;
-  let text = document.getElementById(id).innerHTML;
-  $('.messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><div class="coment reaction" id="chatNo' + chatcount + '"><span class=re>Re:</span>' + text + '</div></div></li>');
+  let text_message = document.getElementById(id).innerHTML;
+  var reaction = {
+    name: myname,
+    text: text_message,
+    smile: smi,
+    angry: ang,
+    neutral: neu
+  }
+  if (myname != '') {
+    message.name += ': ';
+  }
+  socket.emit('reaction', reaction);
+  $('.messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><div class="coment reaction" id="chatNo' + chatcount + '"><span class=re>Re:</span>' + text_message + '</div></div></li>');
   setLogColor();
 }
 
