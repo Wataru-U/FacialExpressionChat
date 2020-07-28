@@ -14,6 +14,7 @@
 
 <body>
   <script src="sketch.js"></script>
+  <script src="menu.js"></script>
 
   <!-- --------ハンバーガーメニュー-------- -->
   <header calss="header">
@@ -24,11 +25,27 @@
         <span class="menuBtn3"></span>
       </p>
     </div>
-    <ul class="menuButtons">
-      <li id="username">username</li>
-      <li id="facialEmotionSetting">facialEmotionSetting</li>
-      <li id="colorSetting">colorSetting</li>
-    </ul>
+    <nav class="naviWrap">
+      <ul class="menuButtons">
+        <li id="usernameButton">username</li>
+        <li id="facialEmotionSettingButton">facialEmotionSetting</li>
+        <li id="colorSettingButon">colorSetting</li>
+      </ul>
+    </nav>
+    <div class="settings">
+      <div class="namesetting">
+        <div class="nameSettingArea">
+          <input type="text" id="nameInput" placeholder="type your name">
+          <button id="nameButton" onclick="setName();">set</button>
+        </div>
+      </div>
+      <div class="facialEmotionSetting">
+
+      </div>
+      <div class="colorSetting">
+
+      </div>
+    </div>
   </header>
 
   <div class="fixed">

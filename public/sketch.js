@@ -1,5 +1,9 @@
 var myId;
 var myname;
+function setName() {
+  myname = document.getElementById("nameInput").value;
+  console.log(myname);
+}
 
 var chatcount = 0;
 
@@ -31,14 +35,14 @@ socket.on('message', gotMessage);//ここ帰る
 /*
 <li class chat id=logNo(count)>
     <div class anoter>
-        <button class=coment id=chatNo(count) onclick=reaction(count)></button>
+        <button class=coment id=chatNo(count) onclick=reaction(count)><span>name</span>:value</button>
     </div>
 </li>
 */
 function gotMessage(message) {
   console.log(message);
   const comment = message.text;
-  $('.messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" > ' + comment + '</button></div></li > ');
+  $('.messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" ><span class="name">' + message.name + '</span>' + comment + '</button></div></li > ');
   let id = "#chatNo" + chatcount;
   let c = rgb2css(message.angry, message.neutral, message.smile, 90);
   $(id).css("background-color", c);
@@ -128,6 +132,7 @@ function sendMessage() {
   var text_message = document.getElementById("message").value;
   var message = {
     id: myId,
+    name: myname;
     text: text_message,
     smile: smi,
     angry: ang,
