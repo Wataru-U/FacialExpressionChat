@@ -132,7 +132,7 @@ function sendMessage() {
   var text_message = document.getElementById("message").value;
   var message = {
     id: myId,
-    name: myname;
+    name: myname,
     text: text_message,
     smile: smi,
     angry: ang,
