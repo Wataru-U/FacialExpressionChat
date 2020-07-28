@@ -62,7 +62,7 @@ function gotMessage(message) {
     </div>
 </li>
 */
-function gotReaction(rection) {
+function gotReaction(reaction) {
   const comment = reaction.text;
   $('.messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><div class="coment reaction" id="chatNo' + chatcount + '"><span class=re>Re:' + reaction.name + '</span>' + comment + '</div></div></li>');
   let id = "#chatNo" + chatcount;
