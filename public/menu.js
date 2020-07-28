@@ -1,7 +1,7 @@
 $(function () {
     $('.naviBtn').on('click', function () {
         if ($(this).hasClass('show')) {
-            $('.naviBtn, .naviWrap,#usernameButton, .namesetting,#facialEmotionSettingButton, facialEmotionSetting,#colorSettingButon, .colorSetting').removeClass('show');
+            $('.naviBtn, .naviWrap,#usernameButton, .namesetting,#facialEmotionSettingButton, .facialEmotionSetting,#colorSettingButon, .colorSetting').removeClass('show');
         }
         else {
             $('.naviBtn, .naviWrap').addClass('show');
@@ -15,16 +15,18 @@ $(function () {
         }
         else {
             $('#usernameButton, .namesetting').addClass('show');
+            $('#facialEmotionSettingButton, .facialEmotionSetting,#colorSettingButon, .colorSetting').removeClass('show');
         }
     }
     )
 
     $('#facialEmotionSettingButton').on('click', function () {
         if ($(this).hasClass('show')) {
-            $('#facialEmotionSettingButton, facialEmotionSetting').removeClass('show');
+            $('#facialEmotionSettingButton, .facialEmotionSetting').removeClass('show');
         }
         else {
-            $('#facialEmotionSettingButton, facialEmotionSetting').addClass('show');
+            $('#facialEmotionSettingButton, .facialEmotionSetting').addClass('show');
+            $('#usernameButton, .namesetting,#colorSettingButon, .colorSetting').removeClass('show');
         }
     }
     )
@@ -35,6 +37,7 @@ $(function () {
         }
         else {
             $('#colorSettingButon, .colorSetting').addClass('show');
+            $('#usernameButton, .namesetting, #facialEmotionSettingButton, .facialEmotionSetting').removeClass('show');
         }
     }
     )

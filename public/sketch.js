@@ -6,12 +6,16 @@ function setName() {
   elm = document.getElementById('mynameArea')
   elm.textContent = myname;
 }
+var sarturation = 90;
+var Lightness = 80;
 
 var chatcount = 0;
 
 var ang;
 var smi;
 var neu;
+
+var myFaceValue = [0, 0, 0];
 
 var capture;
 var tracker;
@@ -42,11 +46,10 @@ socket.on('message', gotMessage);//ここ帰る
 </li>
 */
 function gotMessage(message) {
-  console.log(message);
   const comment = message.text;
   $('.messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><button class="coment" id="chatNo' + chatcount + '" onclick="reaction(' + chatcount + ')" ><span class="name">' + message.name + '</span>' + comment + '</button></div></li > ');
   let id = "#chatNo" + chatcount;
-  let c = rgb2css(message.angry, message.neutral, message.smile, 90);
+  let c = rgb2css(message.angry, message.neutral, message.smile);
   $(id).css("background-color", c);
   chatcount++;
 }
@@ -101,6 +104,18 @@ function draw() {
     // 戻す
     myFacialEmotion = [smi, ang, neu];
   }
+
+  var sar_elm = document.getElementById('sar');
+  var lig_elm = document.getElementById('lig');
+
+  sarturation = sar_elm.value;
+  Lightness = lig_elm.value;
+  let c = rgb2css(0, 0, 0);
+  $(".colExample_r").css("background", c);
+  c = rgb2css(0, 1, 0);
+  $(".colExample_g").css("background", c);
+  c = rgb2css(0, 0, 1);
+  $(".colExample_b").css("background", c);
 }
 
 //表情用
@@ -161,7 +176,7 @@ const log = (comment, options) => {
 
 function setLogColor() {
   let id = "#chatNo" + chatcount;
-  let c = rgb2css(ang, neu, smi, 90);
+  let c = rgb2css(ang, neu, smi);
   $(id).css("background-color", c);
   chatcount++;
 }
@@ -170,29 +185,33 @@ function setLogColor() {
 /*
 <li class chat id=logNo(count)>
     <div class my>
-        <button class=coment id=chatNo(count) onclick=reaction(count)></button>
+        <div class=coment reaction id=chatNo(count) onclick=reaction(count)><span class=re>Re:</span>text</div>
     </div>
-    <div class=reaction id=reaction(num)></div>
 </li>
 */
 
 function reaction(num) {
   console.log(num);
-  let id = '#logNo' + num;
-  $(id).append('<div class="reactoion" id="reaction' + num + '"></div>')
-  id = "#reaction" + num;
-  let c = rgb2css(ang, neu, smi, 90);
+  let id = 'chatNo' + num;
+  let text = document.getElementById(id).value;
+  $(id).append('<div class="coment reactoion" id="chatNo' + num + '"><span class=re>Re:</span>' + text + '</div>');
+  id = '#chatNo' + num;
+  let c = rgb2css(ang, neu, smi);
   $(id).css("background-color", c);
+  chatcount++;
 }
 
 
 function changeBoxColor(r, g, b) {
-  let c = rgb2css(r, g, b, 80);
+  let c = rgb2css(r, g, b);
   $(".st0").css("fill", c);
 }
 
-function rgb2css(r, g, b, l) {
-  var col = r * 600 + g * 0 + b * 200;
-  return "hsl(" + col + ", 70%," + l + "%)";
+function rgb2css(r, g, b) {
+  var col = r * 400 + g * 120 + b * 240;
+  return "hsl(" + col + "," + sarturation + "%," + Lightness + "%)";
 }
 
+function setSmile() { smileValue = myFaceValue; }
+function setAngry() { angryValue = myFaceValue; }
+function setNeutral() { neutralValue = myFaceValue; }

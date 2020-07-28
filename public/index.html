@@ -40,9 +40,27 @@
         </div>
       </div>
       <div class="facialEmotionSetting">
-
+        <div class="febtns">
+          <input type="button" class="febtn" id="smi" value="setSmile" onclick="setSmile();" />
+          <input type="button" class="febtn" id="ang" value="setAngry" onclick="setAngry();" />
+          <input type="button" class="febtn" id="neu" value="setNeutral" onclick="setNeutral();" />
+        </div>
       </div>
       <div class="colorSetting">
+        <div class="hslsliders">
+          <p class="hsl_str">彩度
+            <input type="range" id="sar" value="70" min="1" max="100" step="1">
+          </p>
+          <br>
+          <p class="hsl_str">輝度
+            <input type="range" id="lig" value="80" min="1" max="100" step="1">
+          </p>
+        </div>
+        <div class="colExample">
+          <span class="colExample_r"></span>
+          <span class="colExample_g"></span>
+          <span class="colExample_b"></span>
+        </div>
 
       </div>
     </div>

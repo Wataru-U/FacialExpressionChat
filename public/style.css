@@ -113,9 +113,11 @@ li {
     width: 100%;
     height: 3em;
     border-top : solid 2px #fff;
+    cursor: pointer;
 }
 
 /*  -=-=-settings-=-=- */
+/*  -=-=-name-=-=- */
 .namesetting{
    position: fixed;
 	  width: 80%;
@@ -156,6 +158,90 @@ li {
   background: #bbb;
 }
 
+/*  -=-=-facialEmotion-=-=- */
+.facialEmotionSetting{
+   position: fixed;
+	  width: 80%;
+	  height: 100%;
+    top: 0;
+    left: 20%;
+	  text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    -webkit-transition: .3s ease-out; transition: .3s ease-out;
+    overflow: auto;
+}
+
+.show.facialEmotionSetting{
+  opacity: 1;
+    visibility: visible;
+}
+.febtns{
+  position: relative;
+  left:0;
+  right: 0;
+  top: 50%;
+}
+.febtn
+{
+  background-color: #bbb;
+  color: #fff;
+  font-size: 40px;
+  height: 2em;
+}
+/*  -=-=-color-=-=- */
+.colorSetting{
+   position: fixed;
+	  width: 80%;
+	  height: 100%;
+    top: 0;
+    left: 20%;
+	  text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    -webkit-transition: .3s ease-out; transition: .3s ease-out;
+    overflow: auto;
+}
+.show.colorSetting{
+  top: 10%;
+  opacity: 1;
+    visibility: visible;
+}
+.hslsliders{
+  top: 20%;
+}
+
+.hsl_str{
+  color: #fff;
+}
+
+.colExample{
+  width: 300px;
+  height: 60px;
+}
+.colExample span{
+  position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 0;
+	right: 0;
+	top: 0em;
+	bottom: 0;
+	margin: auto;
+}
+.colorSetting span.colExample_r{
+  left: -240px;
+}
+.colorSetting span.colExample_g{
+  left:0px;
+}
+.colorSetting span.colExample_b{
+  left: 240px;
+}
+
+
 /* -=-=-=-=-=-  background -=-=-=-=-=- */
 .fixed{
   position: fixed;
@@ -167,7 +253,7 @@ li {
 
 .unyounyo{
   position: relative;
-  top: 44%;
+  top: 40%;
   right: 0;
 }
   
@@ -182,7 +268,6 @@ li {
   width: 20em;
   height:  1.5em;
 }
-
 
 
 
@@ -226,10 +311,5 @@ li {
 }
 
 .reaction{
-  position: relative;
-  margin-top: 1em;
-  height: 1em;
-  width: 1em;
-  display: inline;
-  border-radius: 50%;
+  color: #ccc;
 }
