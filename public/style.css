@@ -217,6 +217,27 @@ li {
   color: #fff;
 }
 
+.fontColor
+{
+  position: relative;
+  font-size: 20px;
+  left: 40%;
+  text-align: center;
+  width: 9em;
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.White.fontColor{
+  background: black;
+  color: white;
+}
+.Black.fontColor{
+  background: white;
+  color: black;
+}
+
 .colExample{
   width: 300px;
   height: 60px;

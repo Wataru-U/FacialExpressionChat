@@ -41,4 +41,18 @@ $(function () {
         }
     }
     )
+
+    $('.fontColor').on('click', function () {
+        if ($(this).hasClass('white')) {
+            $('.fontColor, .messages').removeClass('White');
+            $('.fontColor, .messages').addClass('Black');
+            $(".messages").css("color", "#000");
+        }
+        else {
+            $('.fontColor, .messages').removeClass('Black');
+            $('.fontColor, .messages').addClass('White');
+            $(".messages").css("color", "#fff");
+        }
+    }
+    )
 });
