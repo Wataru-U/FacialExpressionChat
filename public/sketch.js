@@ -191,10 +191,9 @@ function setLogColor() {
 */
 
 function reaction(num) {
-  console.log(num);
   let id = 'chatNo' + num;
   let text = document.getElementById(id).value;
-  $(id).append('<div class="coment reactoion" id="chatNo' + num + '"><span class=re>Re:</span>' + text + '</div>');
+  $(ul).append('<div class="coment reactoion" id="chatNo' + num + '"><span class=re>Re:</span>' + text + '</div>');
   id = '#chatNo' + num;
   let c = rgb2css(ang, neu, smi);
   $(id).css("background-color", c);
