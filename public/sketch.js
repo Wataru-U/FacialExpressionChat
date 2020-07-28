@@ -194,9 +194,9 @@ function reaction(num) {
   let id = 'chatNo' + num;
   let text = document.getElementById(id).value;
   $('ul').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><div class="coment reactoion" id="chatNo' + chatcount + '"><span class=re>Re:</span>' + text + '</div></div></li>');
-  id = '#chatNo' + chatcount;
+  let reId = '#chatNo' + chatcount;
   let c = rgb2css(ang, neu, smi);
-  $(id).css("background-color", c);
+  $(reId).css("background-color", c);
   chatcount++;
 }
 
