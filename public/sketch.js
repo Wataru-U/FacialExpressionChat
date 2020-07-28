@@ -193,7 +193,7 @@ function setLogColor() {
 function reaction(num) {
   let id = 'chatNo' + num;
   let text = document.getElementById(id).value;
-  $('messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><div class="coment reaction" id="chatNo' + chatcount + '"><span class=re>Re:</span>' + text + '</div></div></li>');
+  $('.messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="my"><div class="coment reaction" id="chatNo' + chatcount + '"><span class=re>Re:</span>' + text + '</div></div></li>');
   setLogColor();
 }
 
