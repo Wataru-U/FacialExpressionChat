@@ -66,7 +66,7 @@ function gotReaction(reaction) {
   const comment = reaction.text;
   $('.messages').append('<li class="chat" id="logNo' + chatcount + '"><div class="another"><div class="coment reaction" id="chatNo' + chatcount + '"><span class=re>Re:' + reaction.name + '</span>' + comment + '</div></div></li>');
   let id = "#chatNo" + chatcount;
-  let c = rgb2css(message.angry, message.neutral, message.smile);
+  let c = rgb2css(reaction.angry, reaction.neutral, reaction.smile);
   $(id).css("background-color", c);
   chatcount++;
 }
