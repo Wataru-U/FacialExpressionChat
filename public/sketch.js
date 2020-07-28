@@ -1,8 +1,10 @@
 var myId;
 var myname = '';
 function setName() {
-  myname = document.getElementById("nameInput").value;
-  console.log(myname);
+  let elm = document.getElementById('nameInput');
+  myname = elm.value;
+  elm = document.getElementById('mynameArea')
+  elm.textContent = myname;
 }
 
 var chatcount = 0;
@@ -139,7 +141,7 @@ function sendMessage() {
     neutral: neu
   }
   if (myname != '') {
-    message.name += ':';
+    message.name += ': ';
   }
   socket.emit('message', message);
   log(text_message);
