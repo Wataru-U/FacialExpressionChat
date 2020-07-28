@@ -1,5 +1,5 @@
 var myId;
-var myname;
+var myname = '';
 function setName() {
   myname = document.getElementById("nameInput").value;
   console.log(myname);
@@ -137,6 +137,9 @@ function sendMessage() {
     smile: smi,
     angry: ang,
     neutral: neu
+  }
+  if (myname != '') {
+    message.name += ':';
   }
   socket.emit('message', message);
   log(text_message);
