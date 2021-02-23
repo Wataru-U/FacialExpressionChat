@@ -255,10 +255,13 @@ function reculcWeight(col,r,g,b)
   let sSq = ((ave-r) * (ave-r) + (ave - g) * (ave - g) + (ave-b) * (ave-b)) / 2;
   let range = 10 / sSq;
   let maxVal = max(r,max(g,b));
+  console.log(sSq);
   if(r == maxVal)
   {
+    console.log();
       if((abs((col+360) % 360 - angryHue) > range) || abs((col+360) % 360 - 359) > range)
       {
+        console.log();
         rWeight += 1;
       }
   }
