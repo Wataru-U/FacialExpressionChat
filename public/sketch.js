@@ -288,5 +288,6 @@ function reculcWeight(col,r,g,b)
       bWeight %= 360;
     }
   }
+  console.log(col);
   console.log("range:" + range + "r:" + rWeight + " g:" + gWeight + " b:" + bWeight);
 }
