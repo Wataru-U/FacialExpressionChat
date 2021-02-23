@@ -134,7 +134,7 @@ function draw() {
 
   sarturation = sar_elm.value;
   Lightness = lig_elm.value;
-  let c = rgb2css(0, 0, 0);
+  let c = rgb2css(1, 0, 0);
   $(".colExample_r").css("background", c);
   c = rgb2css(0, 1, 0);
   $(".colExample_g").css("background", c);
