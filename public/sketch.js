@@ -16,8 +16,8 @@ var smi;
 var neu;
 
 var myFaceValue = [0, 0, 0];
-var smileHue = document.getElementById('smHue');
-var angryHue = document.getElementById('angHue');
+var smileHue = document.getElementById('smiHue');
+var angryHue = document.getElementById('smiHue');
 var neutralHue = document.getElementById('neuHue');
 
 
