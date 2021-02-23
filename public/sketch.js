@@ -253,7 +253,7 @@ function reculcWeight(col,r,g,b)
 {
   let ave = (r + g + b) / 3;
   let sSq = ((ave-r) * (ave-r) + (ave - g) * (ave - g) + (ave-b) * (ave-b)) / 2;
-  let range = 100 / sSq;
+  let range = 10 / sSq;
   let maxVal = max(r,max(g,b));
   if(r == maxVal)
   {
