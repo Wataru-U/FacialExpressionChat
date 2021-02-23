@@ -262,21 +262,24 @@ function reculcWeight(col,r,g,b)
       if((abs((col+360) % 360 - angryHue) > range) || abs((col+360) % 360 - 359) > range)
       {
         console.log();
-        rWeight += 1;
+        rWeight += 5;
+        rWeight %= 360;
       }
   }
   else if(g == maxVal)
   {
     if(abs((col+360) % 360 - neutralHue) > range)
     {
-      gWeight += 1;
+      gWeight += 5;
+      gWeight  %= 360;
     }
   }
   else
   {
     if(abs((col+360) % 360 - smileHue) > range)
     {
-      bWeight += 1;
+      bWeight += 5;
+      bWeight %= 360;
     }
   }
   console.log("range:" + range + "r:" + rWeight + " g:" + gWeight + " b:" + bWeight);
