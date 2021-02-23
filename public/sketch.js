@@ -16,13 +16,10 @@ var smi;
 var neu;
 
 var myFaceValue = [0, 0, 0];
-var smileHue = 190;
-var angryHue = 0;
-var neutralHue = 280;
+var smileHue = document.getElementById('smHue');
+var angryHue = document.getElementById('angHue');
+var neutralHue = document.getElementById('neuHue');
 
-var rWeight = 0;
-var gWeight = 0;
-var bWeight = 0;
 
 var capture;
 var tracker;
