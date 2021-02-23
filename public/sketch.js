@@ -264,14 +264,14 @@ function reculcWeight(col,r,g,b)
   }
   else if(g == maxVal)
   {
-    if(abs((col+360) % 360 - neutralValue) > range)
+    if(abs((col+360) % 360 - neutralHue) > range)
     {
       gWeight += 1;
     }
   }
   else
   {
-    if(abs((col+360) % 360 - smaileValue) > range)
+    if(abs((col+360) % 360 - smaileHue) > range)
     {
       bWeight += 1;
     }
