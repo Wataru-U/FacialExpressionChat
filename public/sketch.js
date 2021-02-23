@@ -16,6 +16,13 @@ var smi;
 var neu;
 
 var myFaceValue = [0, 0, 0];
+var smileHue = 190;
+var angryHue = 0;
+var neutralHue = 280;
+
+var rWeight;
+var gWeight;
+var bWeight;
 
 var capture;
 var tracker;
@@ -232,10 +239,41 @@ function changeBoxColor(r, g, b) {
 }
 
 function rgb2css(r, g, b) {
-  var col = r * 400 + g * 120 + b * 240;
+  var col = r * rWeight + g * gWeight + b * bWeight;
+  reculcWeight(col, r, g, b);
+  var col = r * rWeight + g * gWeight + b * bWeight;
   return "hsl(" + col + "," + sarturation + "%," + Lightness + "%)";
 }
 
 function setSmile() { smileValue = myFaceValue; }
 function setAngry() { angryValue = myFaceValue; }
 function setNeutral() { neutralValue = myFaceValue; }
+
+function reculcWeight(col,r,g,b)
+{
+  let ave = (r + g + b) / 3;
+  let sSq = ((ave-r) * (ave-r) + (ave - g) * (ave - g) + (ave-b) * (ave-b)) / 2;
+  let range = 100 / sSq;
+  let maxVal = max(r,max(g,b));
+  if(r == maxVal)
+  {
+      if((abs((col+360) % 360 - angryHue) > range) || abs((col+360) % 360 - 359) > range)
+      {
+        rWeight += 1;
+      }
+  }
+  else if(g == maxVal)
+  {
+    if(abs((col+360) % 360 - neutralValue) > range)
+    {
+      gWeight += 1;
+    }
+  }
+  else
+  {
+    if(abs((col+360) % 360 - smaileValue) > range)
+    {
+      bWeight += 1;
+    }
+  }
+}
