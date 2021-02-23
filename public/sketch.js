@@ -251,8 +251,8 @@ function setNeutral() { neutralValue = myFaceValue; }
 
 function reculcWeight(col,r,g,b)
 {
-  let ave = (r + g + b) / 3.0;
-  let sSq = ((ave-r) * (ave-r) + (ave - g) * (ave - g) + (ave-b) * (ave-b)) / 2.0;
+  let ave = (r + g + b) ;
+  let sSq = ((ave-r) * (ave-r) + (ave - g) * (ave - g) + (ave-b) * (ave-b)) * 5;
   let range = 10 / sSq;
   let maxVal = max(r,max(g,b));
   console.log(sSq);
