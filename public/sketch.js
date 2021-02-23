@@ -239,9 +239,28 @@ function changeBoxColor(r, g, b) {
 }
 
 function rgb2css(r, g, b) {
-  var col = r * rWeight + g * gWeight + b * bWeight;
-  reculcWeight(col, r, g, b);
-  var col = r * rWeight + g * gWeight + b * bWeight;
+  var col = 0;
+  let Min = min(r,min(g,b));
+  r -= Min;
+  g -= Min;
+  b -= Min;
+  let sum = r+b+g;
+  r /= sum;
+  b /= sum;
+  g /= sum;
+  let Max = max(r,max(g,b));
+  if(Max == r)
+  {
+    col = b * smileHue - (360 - neutralHue) * g;
+  }
+  else if(Max == g)
+  {
+    col = neutralHue - b * (neutralHue - smileHue) - (neutralHue - 360) * r;
+  }
+  eles
+  {
+    col = smileHUe - (smileHue - neutralHue) * g - (smileHue - 0) * r;
+  }
   return "hsl(" + col + "," + sarturation + "%," + Lightness + "%)";
 }
 
@@ -249,45 +268,4 @@ function setSmile() { smileValue = myFaceValue; }
 function setAngry() { angryValue = myFaceValue; }
 function setNeutral() { neutralValue = myFaceValue; }
 
-function reculcWeight(col,r,g,b)
-{
-  let ave = (r + g + b) ;
-  let sSq = ((ave-r) * (ave-r) + (ave - g) * (ave - g) + (ave-b) * (ave-b)) * 5;
-  let range = 100 / sSq;
-  let maxVal = max(r,max(g,b));
-  console.log(sSq);
-  if(r == maxVal)
-  {
-    console.log();
-      if((abs((col+360) % 360 - angryHue) > range) || abs((col+360) % 360 - 359) > range)
-      {
-        console.log();
-        rWeight += 5;
-        bWeight -= rWeight > 0 ? 1 : 0;
-        gWeight -= gWeight > 0 ? 1 : 0;
-        rWeight %= 360;
-      }
-  }
-  else if(g == maxVal)
-  {
-    if(abs((col+360) % 360 - neutralHue) > range)
-    {
-      gWeight += 5;
-      rWeight -= rWeight > 0 ? 1 : 0;
-      bWeight -= bWeight > 0 ? 1 : 0;
-      gWeight  %= 360;
-    }
-  }
-  else
-  {
-    if(abs((col+360) % 360 - smileHue) > range)
-    {
-      bWeight += 5;
-      rWeight -= rWeight > 0 ? 1 : 0;
-      gWeight -= gWeight > 0 ? 1 : 0;
-      bWeight %= 360;
-    }
-  }
-  console.log(col);
-  console.log("range:" + range + "r:" + rWeight + " g:" + gWeight + " b:" + bWeight);
-}
+  
