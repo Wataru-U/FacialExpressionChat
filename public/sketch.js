@@ -259,7 +259,7 @@ function rgb2css(r, g, b) {
   }
   else
   {
-    col = smileHUe - (smileHue - neutralHue) * g - (smileHue - 0) * r;
+    col = smileHue - (smileHue - neutralHue) * g - (smileHue - 0) * r;
   }
   return "hsl(" + col + "," + sarturation + "%," + Lightness + "%)";
 }
