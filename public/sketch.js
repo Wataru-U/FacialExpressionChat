@@ -257,7 +257,7 @@ function rgb2css(r, g, b) {
   {
     col = neutralHue - b * (neutralHue - smileHue) - (neutralHue - 360) * r;
   }
-  eles
+  else
   {
     col = smileHUe - (smileHue - neutralHue) * g - (smileHue - 0) * r;
   }
