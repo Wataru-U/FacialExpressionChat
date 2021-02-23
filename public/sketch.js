@@ -271,7 +271,7 @@ function reculcWeight(col,r,g,b)
   }
   else
   {
-    if(abs((col+360) % 360 - smaileHue) > range)
+    if(abs((col+360) % 360 - smileHue) > range)
     {
       bWeight += 1;
     }
