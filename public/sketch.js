@@ -263,6 +263,8 @@ function reculcWeight(col,r,g,b)
       {
         console.log();
         rWeight += 5;
+        bWeight -= rWeight > 0 ? 1 : 0;
+        gWeight -= gWeight > 0 ? 1 : 0;
         rWeight %= 360;
       }
   }
@@ -271,6 +273,8 @@ function reculcWeight(col,r,g,b)
     if(abs((col+360) % 360 - neutralHue) > range)
     {
       gWeight += 5;
+      rWeight -= rWeight > 0 ? 1 : 0;
+      bWeight -= bWeight > 0 ? 1 : 0;
       gWeight  %= 360;
     }
   }
@@ -279,6 +283,8 @@ function reculcWeight(col,r,g,b)
     if(abs((col+360) % 360 - smileHue) > range)
     {
       bWeight += 5;
+      rWeight -= rWeight > 0 ? 1 : 0;
+      gWeight -= gWeight > 0 ? 1 : 0;
       bWeight %= 360;
     }
   }
