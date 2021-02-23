@@ -20,9 +20,9 @@ var smileHue = 190;
 var angryHue = 0;
 var neutralHue = 280;
 
-var rWeight;
-var gWeight;
-var bWeight;
+var rWeight = 0;
+var gWeight = 0;
+var bWeight = 0;
 
 var capture;
 var tracker;
