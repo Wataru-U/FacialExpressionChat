@@ -276,4 +276,5 @@ function reculcWeight(col,r,g,b)
       bWeight += 1;
     }
   }
+  console.log("r:" + rWeight + " g:" + gWeight + " b:" + bWeight);
 }
