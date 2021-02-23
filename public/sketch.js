@@ -16,9 +16,6 @@ var smi;
 var neu;
 
 var myFaceValue = [0, 0, 0];
-var smileHue = document.getElementById('smiHue');
-var angryHue = document.getElementById('smiHue');
-var neutralHue = document.getElementById('neuHue');
 
 
 var capture;
@@ -236,6 +233,9 @@ function changeBoxColor(r, g, b) {
 }
 
 function rgb2css(r, g, b) {
+  let smileHue = document.getElementById('smiHue').value;
+  let angryHue = document.getElementById('angHue').value;
+  let neutralHue = document.getElementById('neuHue').value;
   var col = 0;
   let Min = min(r,min(g,b));
   r -= Min;
@@ -248,16 +248,18 @@ function rgb2css(r, g, b) {
   let Max = max(r,max(g,b));
   if(Max == r)
   {
-    col = b * smileHue - (360 - neutralHue) * g;
+    col = angryHue - culcDiff(angryHue,smileHue) * b - culcDiff(angryHue,neutralHue) * g;
   }
   else if(Max == g)
   {
-    col = neutralHue - b * (neutralHue - smileHue) - (neutralHue - 360) * r;
+    col = neutralHue - culcDiff(neutralHue,smileHue) * b - culcDiff(neutralHue,angryHue) * r;
   }
   else
   {
-    col = smileHue - (smileHue - neutralHue) * g - (smileHue - 0) * r;
+    col = smileHue - culcDiff(smileHue,neutralHue) * g - culcDiff(smileHue,angryHue) * r;
   }
+  console.log("smile" + smileHue.value + " ang" + angryHue.value + " neu:" + neutralHue.value);
+  console.log("smile" + document.getElementById('smiHue') + "sar" + document.getElementById('sar'));
   return "hsl(" + col + "," + sarturation + "%," + Lightness + "%)";
 }
 
@@ -265,4 +267,32 @@ function setSmile() { smileValue = myFaceValue; }
 function setAngry() { angryValue = myFaceValue; }
 function setNeutral() { neutralValue = myFaceValue; }
 
-  
+//角度の差を求める
+function culcDiff(a, b)
+{
+  let result = 0
+  if(a > 180)
+  {
+    if(b < a && b > a - 180 || a < b)
+    {
+      result = a - b;
+    }
+    else
+    {
+      //b > 0 && b < a - 180
+      result = 360 - a + b;
+    }
+  }
+  else
+  {
+    if(b > a)
+    {
+      result = a - b;
+    }
+    else
+    {
+      result = 360 - b + a;
+    }
+  }
+  return result
+}

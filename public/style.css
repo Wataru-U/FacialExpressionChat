@@ -318,3 +318,16 @@ li {
   font-weight: bold;
   color: black;
 }
+
+/*スライダーバー*/
+input[type="range"]{
+  width: 80%;
+}
+
+.hue_str{
+  color: #000;
+}
+
+.hue_slider{
+  margin-top: 40px;
+}
