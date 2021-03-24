@@ -247,15 +247,21 @@ li {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  top : 0;
   bottom: 0;
 }
 
-.unyounyo{
-  position: relative;
-  top: 40%;
+
+#svg{
+  position: absolute;
+  width: 100vw;
+  top: 85vh;
+  left: 0;
   right: 0;
 }
+
+
+
+
   
 /* -=-=-=-=-=- text -=-=-=-=-=- */
 .buttons{
